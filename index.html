@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ESCAPER&#174;</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      @font-face {
+          font-family: escaperfont;
+          src: url('/fonts/Hanson-Bold.ttf');
+      }
+      #header-logo {
+        font-family: escaperfont;
+      }
+      :root {
+        --bs-breakpoint-lg: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="site-wrap"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+      var siteScroll = function() {
+        window.addEventListener('scroll', function() {
+          var st = window.pageYOffset || document.documentElement.scrollTop;
+          if (st > 300) {
+            // document.getElementById('svgcart').style.color = 'black';
+            // document.getElementById('cart').style.color = 'black';
+            document.querySelector('.navbar').classList.remove('light-color')
+            document.querySelector('.navbar').classList.add('bg-body-tertiary');
+          } else {
+            // document.getElementById('svgcart').style.color = 'white';
+            // document.getElementById('cart').style.color = 'white';
+            // document.querySelector('.dropdown-menu').classList.remove('transparent-bg')
+            document.querySelector('.navbar').classList.add('light-color')
+            document.querySelector('.navbar').classList.remove('bg-body-tertiary');
+          }
+        });
+      };
+      siteScroll();
+    </script>
+  </body>
+</html>
